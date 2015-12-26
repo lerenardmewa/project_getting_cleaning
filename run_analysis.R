@@ -46,6 +46,6 @@ prepareAll <- function() {
   out$tidy <- out$combined %>% group_by(Subject, Activity) %>% 
     summarise_each(funs(mean)) %>% 
     gather(Measurement, Mean, -Activity, -Subject)
-  write.table(out$tidy, file="tidy_data.txt", row.names = FALSE)
+  write.table(out$tidy, file="tidy_data.txt", row.name = FALSE)
   out
 }
